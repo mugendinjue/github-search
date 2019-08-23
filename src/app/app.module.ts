@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UserDisplayComponent } from './user-display/user-display.component';
     NavbarComponent,
     GithubSearchComponent,
     UserSearchComponent,
-    UserDisplayComponent
+    UserDisplayComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
