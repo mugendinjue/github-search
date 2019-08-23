@@ -10,6 +10,7 @@ import { GithubSearchComponent } from './github-search/github-search.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { ErrorComponent } from './error/error.component';
+import { DefaultUserComponent } from './default-user/default-user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ErrorComponent } from './error/error.component';
     GithubSearchComponent,
     UserSearchComponent,
     UserDisplayComponent,
-    ErrorComponent
+    ErrorComponent,
+    DefaultUserComponent
   ],
   imports: [
     BrowserModule,
