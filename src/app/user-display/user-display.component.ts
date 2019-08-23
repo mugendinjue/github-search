@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDisplayComponent implements OnInit {
 
+  gitUserName(){
+    
+  }
+
   constructor() { }
 
   ngOnInit() {
