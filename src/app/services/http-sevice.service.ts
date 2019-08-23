@@ -14,7 +14,7 @@ export class HttpSeviceService {
 
   constructor(private http : HttpClient ) { }
 
-  searchGitUser(userN){
+  searchUser(userN){
     interface Result{
       avatar_url:string;
       login : string;
