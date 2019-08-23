@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-search',
@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class UserSearchComponent implements OnInit {
 
   userName : string;
-  
+  @Output () gitUser = new EventEmitter<any>();
+
+  searchUser(){
+    this.gitUser.emit(this.userName);
+  }
+
 
   constructor() { }
 
