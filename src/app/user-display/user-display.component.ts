@@ -27,6 +27,7 @@ export class UserDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
 }

@@ -37,8 +37,8 @@ export class DefaultUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gitUserName('mugendinjue');
-    this.gitRepos('mugendinjue');
+    this.gitUserName('mugendinjue')
+    this.gitRepos('mugendinjue')
   }
 
 }

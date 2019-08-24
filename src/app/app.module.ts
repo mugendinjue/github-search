@@ -11,6 +11,7 @@ import { UserSearchComponent } from './user-search/user-search.component';
 import { UserDisplayComponent } from './user-display/user-display.component';
 import { ErrorComponent } from './error/error.component';
 import { DefaultUserComponent } from './default-user/default-user.component';
+import { ReposComponent } from './repos/repos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DefaultUserComponent } from './default-user/default-user.component';
     UserSearchComponent,
     UserDisplayComponent,
     ErrorComponent,
-    DefaultUserComponent
+    DefaultUserComponent,
+    ReposComponent
   ],
   imports: [
     BrowserModule,
