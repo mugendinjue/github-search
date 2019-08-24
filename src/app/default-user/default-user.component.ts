@@ -18,7 +18,6 @@ export class DefaultUserComponent implements OnInit {
      (result) =>{
        
        this.myGithub = this.defaultService.user
-       console.log(this.myGithub);
      },(error)=>{
        console.log('error')
      });
@@ -27,8 +26,6 @@ export class DefaultUserComponent implements OnInit {
 
   ngOnInit() {
     this.gitUserName('mugendinjue');
-    // this.gitUserName('mugendinjue');
-    // console.log(this.myGithub);
   }
 
 }

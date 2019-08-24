@@ -21,13 +21,15 @@ export class HttpSeviceService {
       repos_url:string;
       followers:string;
       following:string;
+      created_at:any;
+      public_repos:string;
     }
 
 
     let promise = new Promise ((resolve,reject)=>{
       this.http.get<Result>('https://api.github.com/users/'+userN+'?access_token='+environment.apiKey).toPromise().then(
         (result)=>{
-      this.user = new Users(result.login,result.avatar_url,result.followers,result.following)
+      this.user = new Users(result.login,result.avatar_url,result.followers,result.following,result.created_at,result.public_repos)
       this.defaultUser.push(this.user);
       // console.log(this.defaultUser);
       
