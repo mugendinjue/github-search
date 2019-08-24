@@ -1,0 +1,9 @@
+img{
+    max-width: 80%;
+    border-radius: 650px;
+}
+.me h3 {
+    justify-content: center;
+    font-size: 60px;
+    display: flex;
+  }

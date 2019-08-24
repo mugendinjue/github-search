@@ -13,8 +13,6 @@ export class HttpSeviceService {
 
   constructor(private http : HttpClient ) { }
 
-  default = 'mugendinjue';
-
   searchUser(userN){
     interface Result{
       avatar_url:string;
@@ -31,7 +29,7 @@ export class HttpSeviceService {
         (result)=>{
       this.user = new Users(result.login,result.avatar_url,result.followers,result.following)
       this.defaultUser.push(this.user);
-      console.log(this.defaultUser);
+      // console.log(this.defaultUser);
       
       resolve()
         },(error)=>{

@@ -1,1 +1,42 @@
-<p>default-user works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <img src="{{myGithub.avatar}}" alt="">
+        </div>
+            <div class="col-md-8 ">
+              <div class="table me">
+                <h3>{{myGithub.gitHubUserName}}</h3>
+                <table class="table info-bio">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Github Username:</th>
+                      <td>{{myGithub.gitHubUserName}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Number of Repos:</th>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Date created:</th>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Followers:</th>
+                      <td>{{myGithub.followers }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Following</th>
+                      <td>{{myGithub.following}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
