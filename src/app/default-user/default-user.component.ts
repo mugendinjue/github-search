@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpSeviceService } from '../services/http-sevice.service';
 import { Users } from '../users';
+import { Repositories } from '../repositories';
 
 @Component({
   selector: 'app-default-user',
@@ -10,6 +11,7 @@ import { Users } from '../users';
 export class DefaultUserComponent implements OnInit {
 
   myGithub : Users ;
+  myRepos : any ;
 
   constructor(private defaultService : HttpSeviceService) { }
 
@@ -18,14 +20,25 @@ export class DefaultUserComponent implements OnInit {
      (result) =>{
        
        this.myGithub = this.defaultService.user
+       this.myRepos = this.defaultService.repos
+       console.log(this.myRepos)
      },(error)=>{
        console.log('error')
      });
    
  }
+  gitRepos(user){
+    this.defaultService.getRepos(user).then((Result)=>{
+      this.myRepos = this.defaultService.repos
+      console.log(this.myRepos);
+    },(error)=>{
+      console.log(error)
+    })
+  }
 
   ngOnInit() {
     this.gitUserName('mugendinjue');
+    this.gitRepos('mugendinjue');
   }
 
 }

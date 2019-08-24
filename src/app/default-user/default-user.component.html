@@ -1,39 +1,61 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <img src="{{myGithub.avatar}}" alt="">
+      <div class="col-md-3">
+        <img src="{{myGithub.avatar}}" alt="">
+      </div>
+        <div class="col-md-8 ">
+          <div class="table me">
+            <h3>{{myGithub.gitHubUserName}}</h3>
+            <table class="table info-bio">
+              <tbody>
+                <tr>
+                  <th scope="row">Github Username:</th>
+                    <td>{{myGithub.gitHubUserName}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Number of Repos:</th>
+                    <td>{{myGithub.repos}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Date created:</th>
+                    <td>{{myGithub.createOn | date}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Followers:</th>
+                    <td>{{myGithub.followers }}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Following:</th>
+                    <td>{{myGithub.following}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-            <div class="col-md-8 ">
-              <div class="table me">
-                <h3>{{myGithub.gitHubUserName}}</h3>
-                <table class="table info-bio">
-                  <tbody>
-                    <tr>
-                      <th scope="row">Github Username:</th>
-                      <td>{{myGithub.gitHubUserName}}</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Number of Repos:</th>
-                      <td>{{myGithub.repos}}</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Date created:</th>
-                      <td>{{myGithub.createOn | date}}</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Followers:</th>
-                      <td>{{myGithub.followers }}</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Following</th>
-                      <td>{{myGithub.following}}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 user-repos">
+      <h3 >Repositories</h3>
+      <div class="table">
+        <table class="table">
+          <tbody>
+            <tr *ngFor='let repo of myRepos'>
+              <td>
+                <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
+                <br>
+                <p class="desc">Description: {{repo.description}}</p>
+                <br>
+                <p>Date Created: {{repo.created_at | date}}</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
 
 

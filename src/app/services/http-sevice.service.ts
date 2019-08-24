@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Users  } from '../users';
 import { environment } from '../../environments/environment';
+import { Repositories } from '../repositories';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { environment } from '../../environments/environment';
 export class HttpSeviceService {
 
   user : Users;
-  defaultUser = [];
+  repos : any;
 
   constructor(private http : HttpClient ) { }
 
@@ -18,19 +19,23 @@ export class HttpSeviceService {
       avatar_url:string;
       login : string;
       public_repo:string;
-      repos_url:string;
+      repos_url: any;
       followers:string;
       following:string;
       created_at:any;
       public_repos:string;
+      
     }
 
 
     let promise = new Promise ((resolve,reject)=>{
       this.http.get<Result>('https://api.github.com/users/'+userN+'?access_token='+environment.apiKey).toPromise().then(
         (result)=>{
-      this.user = new Users(result.login,result.avatar_url,result.followers,result.following,result.created_at,result.public_repos)
-      this.defaultUser.push(this.user);
+      this.user = new Users(result.login,result.avatar_url,result.followers,result.following,result.created_at,result.public_repos);
+  
+
+      
+      // this.defaultUser.push(this.user);
       // console.log(this.defaultUser);
       
       resolve()
@@ -39,6 +44,27 @@ export class HttpSeviceService {
           reject(error);
 
         })
+    })
+    return promise
+  }
+  getRepos(userN){
+    interface dataGet{
+      name:string;
+      html_url:string;
+      description:string;
+      created_at:Date;
+    }
+
+    let promise = new Promise ((resolve,reject)=>{
+      this.http.get<dataGet>('https://api.github.com/users/'+userN+'/repos?order=created&sort=asc?access_token='+environment.apiKey).toPromise().then(
+        (Result)=>{
+          this.repos = Result;
+          console.log(this.repos);
+          (resolve)
+      },(error)=>{
+        console.log(error);
+        reject(error);
+      })
     })
     return promise
   }
