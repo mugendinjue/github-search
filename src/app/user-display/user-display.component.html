@@ -44,11 +44,11 @@
                 <tbody>
                   <tr *ngFor='let repo of myRepos'>
                     <td>
-                      <a href="" target="_blank" ></a>
+                      <a href="{{repoDisplay.html_url}}" target="_blank" >{{repoDisplay.name}}</a>
                       <br>
-                      <p class="desc">Description:</p>
+                      <p class="desc">Description: {{repoDisplay.description}}</p>
                       <br>
-                      <p>Date Created: </p>
+                      <p>Date Created: {{repoDisplay.created_at | date}}</p>
                     </td>
                   </tr>
                 </tbody>

@@ -10,6 +10,7 @@ import { Users } from '../users';
 export class UserDisplayComponent implements OnInit {
 
   resultDisplay:Users;
+  repoDisplay : any;
 
 
 
@@ -24,6 +25,15 @@ export class UserDisplayComponent implements OnInit {
         console.log('error')
       });
     
+  }
+
+  gitUserNameRepos(user){
+    this.httpService.getRepos(user).then((Result)=>{
+      this.repoDisplay = this.httpService.repos
+      console.log(this.repoDisplay)
+    },(error)=>{
+      console.log('error')
+    })
   }
 
   ngOnInit() {
