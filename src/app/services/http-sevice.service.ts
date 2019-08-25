@@ -11,6 +11,7 @@ export class HttpSeviceService {
 
   user : Users;
   repos : any = [];
+  searchRepos : any = [];
   private access_token  = environment.access_token;
 
   constructor(private http : HttpClient ) { }
@@ -54,6 +55,7 @@ export class HttpSeviceService {
       this.http.get<dataGet>('https://api.github.com/users/'+userN+'/repos?order=created&sort=asc?access_token='+this.access_token).toPromise().then(
         (Result)=>{
           this.repos.push(Result);
+          console.log(this.repos);
           (resolve)
       },(error)=>{
         console.log(error);

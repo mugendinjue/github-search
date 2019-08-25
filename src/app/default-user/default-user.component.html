@@ -39,12 +39,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 user-repos">
-      <h3 >Repositories</h3>
+      <h3 id="rep" >Repositories</h3>
       <div class="table">
-        <table class="table">
+        <table class="table" id="tab">
           <tbody>
             <tr *ngFor='let repo of myRepos[0] ; let i = index'>
-              <td>
+              <td id="det">
                 <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
                 <br>
                 <p class="desc">Description: {{repo.description}}</p>

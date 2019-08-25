@@ -7,3 +7,13 @@ img{
     font-size: 60px;
     display: flex;
   }
+#rep {
+  text-align: center;
+}
+#det {
+  text-align: center;
+  font-weight: bolder;
+}
+#tab {
+  background-color: #F7DC6F ;
+}

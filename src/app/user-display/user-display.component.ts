@@ -21,7 +21,7 @@ export class UserDisplayComponent implements OnInit {
       (result) =>{
         this.resultDisplay = this.httpService.user
         this.repoDisplay = this.httpService.repos
-        console.log(this.resultDisplay);
+        console.log(this.repoDisplay);
       },(error)=>{
         console.log('error')
       });
