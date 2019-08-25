@@ -43,7 +43,7 @@
       <div class="table">
         <table class="table">
           <tbody>
-            <tr *ngFor='let repo of myRepos'>
+            <tr *ngFor='let repo of myRepos[0] ; let i = index'>
               <td>
                 <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
                 <br>
@@ -58,7 +58,6 @@
     </div>
   </div>
 </div>
-
 
 
 

@@ -20,6 +20,7 @@ export class UserDisplayComponent implements OnInit {
      this.httpService.searchUser(user).then(
       (result) =>{
         this.resultDisplay = this.httpService.user
+        this.repoDisplay = this.httpService.repos
         console.log(this.resultDisplay);
       },(error)=>{
         console.log('error')
