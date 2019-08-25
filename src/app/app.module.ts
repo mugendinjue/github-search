@@ -12,6 +12,7 @@ import { UserDisplayComponent } from './user-display/user-display.component';
 import { ErrorComponent } from './error/error.component';
 import { DefaultUserComponent } from './default-user/default-user.component';
 import { ReposComponent } from './repos/repos.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReposComponent } from './repos/repos.component';
     UserDisplayComponent,
     ErrorComponent,
     DefaultUserComponent,
-    ReposComponent
+    ReposComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
