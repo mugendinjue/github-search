@@ -7,3 +7,6 @@ img{
     font-size: 60px;
     display: flex;
   }
+#repo {
+  text-align: center;
+}
