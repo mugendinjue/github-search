@@ -13,6 +13,7 @@ import { ErrorComponent } from './error/error.component';
 import { DefaultUserComponent } from './default-user/default-user.component';
 import { ReposComponent } from './repos/repos.component';
 import { HighlightDirective } from './highlight.directive';
+import { DateCounterPipe } from './date-counter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HighlightDirective } from './highlight.directive';
     ErrorComponent,
     DefaultUserComponent,
     ReposComponent,
-    HighlightDirective
+    HighlightDirective,
+    DateCounterPipe
   ],
   imports: [
     BrowserModule,
