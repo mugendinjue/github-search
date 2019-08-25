@@ -11,6 +11,7 @@ export class HttpSeviceService {
 
   user : Users;
   repos : any;
+  private access_token  = environment.access_token;
 
   constructor(private http : HttpClient ) { }
 
@@ -27,9 +28,9 @@ export class HttpSeviceService {
       
     }
 
-
+    
     let promise = new Promise ((resolve,reject)=>{
-      this.http.get<Result>('https://api.github.com/users/'+userN+'?access_token='+environment.apiKey).toPromise().then(
+      this.http.get<Result>('https://api.github.com/users/'+userN+'?access_token='+this.access_token).toPromise().then(
         (result)=>{
       this.user = new Users(result.login,result.avatar_url,result.followers,result.following,result.created_at,result.public_repos);
       resolve()
@@ -48,9 +49,9 @@ export class HttpSeviceService {
       description:string;
       created_at:Date;
     }
-
+    
     let promise = new Promise ((resolve,reject)=>{
-      this.http.get<dataGet>('https://api.github.com/users/'+userN+'/repos?order=created&sort=asc?access_token='+environment.apiKey).toPromise().then(
+      this.http.get<dataGet>('https://api.github.com/users/'+userN+'/repos?order=created&sort=asc?access_token='+this.access_token).toPromise().then(
         (Result)=>{
           this.repos = Result;
           console.log(this.repos);
