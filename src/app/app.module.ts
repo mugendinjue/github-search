@@ -14,6 +14,7 @@ import { DefaultUserComponent } from './default-user/default-user.component';
 import { ReposComponent } from './repos/repos.component';
 import { HighlightDirective } from './highlight.directive';
 import { DateCounterPipe } from './date-counter.pipe';
+import { UpercasePipe } from './upercase.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DateCounterPipe } from './date-counter.pipe';
     DefaultUserComponent,
     ReposComponent,
     HighlightDirective,
-    DateCounterPipe
+    DateCounterPipe,
+    UpercasePipe
   ],
   imports: [
     BrowserModule,
