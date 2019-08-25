@@ -27,7 +27,7 @@ export class UserDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.gitUserName('washuCode');
   }
 
 }
