@@ -32,13 +32,13 @@ export class DefaultUserComponent implements OnInit {
       this.myRepos = this.defaultService.repos
       console.log(this.myRepos);
     },(error)=>{
-      console.log(error)
+      console.log('error')
     })
   }
 
   ngOnInit() {
-    this.gitUserName('mugendinjue')
-    this.gitRepos('mugendinjue')
+    this.gitUserName('mugendinjue');
+    this.gitRepos('mugendinjue');
   }
 
 }
