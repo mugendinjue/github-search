@@ -13,17 +13,9 @@ export class ReposComponent implements OnInit {
 
   constructor(private defaultService : HttpSeviceService) { }
 
-  // gitRepos(user){
-  //   this.defaultService.getRepos(user).then((Result)=>{
-  //     this.myRepos = this.defaultService.repos
-  //     console.log(this.myRepos);
-  //   },(error)=>{
-  //     console.log(error)
-  //   })
-  // }
 
   ngOnInit() {
-    // this.gitRepos('mugendinjue')
+  
   }
 
 }

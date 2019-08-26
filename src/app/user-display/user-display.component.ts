@@ -11,7 +11,7 @@ export class UserDisplayComponent implements OnInit {
 
   resultDisplay:Users;
   repoDisplay : any ;
-  arr : any = [];
+ 
 
 
 
@@ -22,8 +22,8 @@ export class UserDisplayComponent implements OnInit {
       (result) =>{
         this.resultDisplay = this.httpService.user
         this.repoDisplay = this.httpService.searchRepos;
-        this.arr.push(this.repoDisplay);
-        console.log(this.arr);
+        // this.arr.push(this.repoDisplay);
+        // console.log(this.arr);
       },(error)=>{
         console.log('error')
       });
@@ -37,14 +37,6 @@ export class UserDisplayComponent implements OnInit {
      this.gitUserName(user)
   }
 
-  // getSearchRepos(user){
-  //   this.httpService.getSearchRepos(user).then((Result)=>{
-  //     this.repoDisplay = this.httpService.repos
-  //     console.log(this.repoDisplay)
-  //   },(error)=>{
-  //     console.log('error')
-  //   })
-  // }
 
   ngOnInit() {
     this.gitUserName('Dcode-M');
