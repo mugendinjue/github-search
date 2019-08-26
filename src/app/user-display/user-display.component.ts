@@ -22,8 +22,6 @@ export class UserDisplayComponent implements OnInit {
       (result) =>{
         this.resultDisplay = this.httpService.user
         this.repoDisplay = this.httpService.searchRepos;
-        // this.arr.push(this.repoDisplay);
-        // console.log(this.arr);
       },(error)=>{
         console.log('error')
       });
@@ -34,7 +32,7 @@ export class UserDisplayComponent implements OnInit {
       },(error)=>{
         console.log('error');
       });
-     this.gitUserName(user)
+    
   }
 
 
