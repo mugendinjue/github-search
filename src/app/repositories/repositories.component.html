@@ -1,1 +1,25 @@
-<p>repositories works!</p>
+
+<app-user-search (gitUser) = 'searchRepo($event)' ></app-user-search>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 user-repos">
+        <h3 id="rep" >Repositories</h3>
+        <div class="table">
+          <table class="table" id="tab">
+            <tbody>
+              <tr *ngFor='let repo of repoList; let i = index'>
+                <td id="det">
+                  <a href="{{repo.repoUrl}}" target="_blank" >{{repo.repositoriesname}}</a>
+                  <br>
+                  <p class="desc">Description: {{repo.repoDescription}}</p>
+                  <br>
+                  <!-- <p>Date Created: {{repo.created_at | date}}</p> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

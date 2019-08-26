@@ -12,6 +12,7 @@ export class HttpSeviceService {
   user : Users;
   repos : any = [];
   searchRepos : any = [];
+  userRepo : Repositories[];
   private access_token  = environment.access_token;
 
   constructor(private http : HttpClient ) { }
@@ -55,7 +56,6 @@ export class HttpSeviceService {
       this.http.get<dataGet>('https://api.github.com/users/'+userN+'/repos?order=created&sort=asc?access_token='+this.access_token).toPromise().then(
         (Result)=>{
           this.repos.push(Result);
-          console.log(this.repos);
           (resolve)
       },(error)=>{
         console.log(error);
@@ -78,7 +78,35 @@ export class HttpSeviceService {
         (resultData)=>{
           this.searchRepos = [];
           this.searchRepos.push(resultData);
-          console.log(this.searchRepos);
+          (resolve)
+      },(error)=>{
+        console.log(error);
+        reject(error);
+      })
+    })
+    return promise
+  }
+
+  getRepoName(reponame){
+    interface datarepo{
+      name:string;
+      html_url:string;
+      description:string;
+      created_at:Date;
+    }
+    
+    let promise = new Promise ((resolve,reject)=>{
+      this.http.get<datarepo>("https://api.github.com/search/repositories?q="+reponame+"&per_page="+10+"&sort=forks&order=asc?access_token="+this.access_token).toPromise().then(
+        (resultrepo)=>{
+          this.userRepo = [];
+          for(let i=0; i<10; i++){
+            let repositoriesname = resultrepo["items"][i]["full_name"];
+            let repoDescription = resultrepo ["items"][i]["description"];
+            let repoUrl = resultrepo ["items"][i]["html_url"]
+            let repo = new Repositories(repositoriesname,repoDescription,repoUrl);
+            this.userRepo.push(repo);
+          }
+          
           (resolve)
       },(error)=>{
         console.log(error);
