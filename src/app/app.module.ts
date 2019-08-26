@@ -17,6 +17,7 @@ import { ReposComponent } from './repos/repos.component';
 import { HighlightDirective } from './highlight.directive';
 import { DateCounterPipe } from './date-counter.pipe';
 import { UpercasePipe } from './upercase.pipe';
+import { RepositoriesComponent } from './repositories/repositories.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UpercasePipe } from './upercase.pipe';
     ReposComponent,
     HighlightDirective,
     DateCounterPipe,
-    UpercasePipe
+    UpercasePipe,
+    RepositoriesComponent
   ],
   imports: [
     BrowserModule,

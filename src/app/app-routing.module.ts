@@ -9,7 +9,8 @@ import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {path:'home',component:GithubSearchComponent},
-  {path: 'search',component:UserDisplayComponent},
+  {path: 'search User',component:UserDisplayComponent},
+  {path: 'search Repository',component:GithubSearchComponent},
   {'pathMatch':'full','redirectTo':'home','path':''},
   { path : '**',component:ErrorComponent }
   
