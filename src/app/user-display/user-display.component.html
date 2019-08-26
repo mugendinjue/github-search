@@ -42,13 +42,13 @@
             <div class="table">
               <table class="table">
                 <tbody>
-                  <tr *ngFor='let repo of repoDisplay'>
+                  <tr *ngFor='let repo of repoDisplay[0]'>
                     <td>
-                      <a href="{{repoDisplay.html_url}}" target="_blank" >{{repoDisplay.name}}</a>
+                      <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
                       <br>
-                      <p class="desc">Description: {{repoDisplay.description}}</p>
+                      <p class="desc">Description: {{repo.description}}</p>
                       <br>
-                      <p>Date Created: {{repoDisplay.created_at | date}}</p>
+                      <p>Date Created: {{repo.created_at | date}}</p>
                     </td>
                   </tr>
                 </tbody>

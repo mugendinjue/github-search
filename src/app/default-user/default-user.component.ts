@@ -21,7 +21,7 @@ export class DefaultUserComponent implements OnInit {
        
        this.myGithub = this.defaultService.user
        this.myRepos = this.defaultService.repos
-       console.log(this.myRepos)
+     
      },(error)=>{
        console.log('error')
      });
@@ -30,7 +30,7 @@ export class DefaultUserComponent implements OnInit {
   gitRepos(user){
     this.defaultService.getRepos(user).then((Result)=>{
       this.myRepos = this.defaultService.repos
-      console.log(this.myRepos);
+      
     },(error)=>{
       console.log('error')
     })

@@ -10,7 +10,8 @@ import { Users } from '../users';
 export class UserDisplayComponent implements OnInit {
 
   resultDisplay:Users;
-  repoDisplay : any;
+  repoDisplay : any ;
+  arr : any = [];
 
 
 
@@ -20,22 +21,30 @@ export class UserDisplayComponent implements OnInit {
      this.httpService.searchUser(user).then(
       (result) =>{
         this.resultDisplay = this.httpService.user
-        this.repoDisplay = this.httpService.repos
-        console.log(this.repoDisplay);
+        this.repoDisplay = this.httpService.searchRepos;
+        this.arr.push(this.repoDisplay);
+        console.log(this.arr);
       },(error)=>{
         console.log('error')
       });
-    
+
+      this.httpService.getSearchRepos(user).then((resultData)=>{
+        this.repoDisplay = this.httpService.searchRepos
+        console.log(this.repoDisplay);
+      },(error)=>{
+        console.log('error');
+      });
+     this.gitUserName(user)
   }
 
-  gitUserNameRepos(user){
-    this.httpService.getRepos(user).then((Result)=>{
-      this.repoDisplay = this.httpService.repos
-      console.log(this.repoDisplay)
-    },(error)=>{
-      console.log('error')
-    })
-  }
+  // getSearchRepos(user){
+  //   this.httpService.getSearchRepos(user).then((Result)=>{
+  //     this.repoDisplay = this.httpService.repos
+  //     console.log(this.repoDisplay)
+  //   },(error)=>{
+  //     console.log('error')
+  //   })
+  // }
 
   ngOnInit() {
     this.gitUserName('Dcode-M');

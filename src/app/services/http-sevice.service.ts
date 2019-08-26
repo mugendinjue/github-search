@@ -65,4 +65,27 @@ export class HttpSeviceService {
     return promise
   }
 
+  getSearchRepos(userN){
+    interface dataSearch{
+      name:string;
+      html_url:string;
+      description:string;
+      created_at:Date;
+    }
+    
+    let promise = new Promise ((resolve,reject)=>{
+      this.http.get<dataSearch>('https://api.github.com/users/'+userN+'/repos?order=created&sort=asc?access_token='+this.access_token).toPromise().then(
+        (resultData)=>{
+          this.searchRepos = [];
+          this.searchRepos.push(resultData);
+          console.log(this.searchRepos);
+          (resolve)
+      },(error)=>{
+        console.log(error);
+        reject(error);
+      })
+    })
+    return promise
+  }
+
 }
